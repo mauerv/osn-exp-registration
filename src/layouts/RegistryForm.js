@@ -38,13 +38,11 @@ class RegistryFormComponent extends Component {
     e.preventDefault()
     let formData = Object.assign({}, this.state)
     delete formData.activeCategory
-    /*
     for (var key in formData) {
       if (formData[key] === '') {
         return alert('Required fields are not filled.')
       }
     }
-    */
     this.props.onPreviewClick(formData)
   }
 

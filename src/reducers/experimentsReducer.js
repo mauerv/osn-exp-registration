@@ -8,6 +8,10 @@ const experimentsReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         experimentList: action.payload
       })
+    case 'SUCCESSFUL_REGISTRATION':
+      return {
+        experimentList: [...state.experimentList, action.payload]
+      }
     default:
       return state
   }

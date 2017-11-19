@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import texts from '../util/formTexts'
+import { submitRegistrationForm } from '../actions/registryFormActions'
 import Button from '../components/Button'
 
 class PreviewComponent extends Component {
@@ -25,7 +26,7 @@ class PreviewComponent extends Component {
                 </div>
               )
             })}
-            <Button text="Register Experiment"/>
+            <Button text="Register Experiment" onButtonClick={this.props.submitForm}/>
           </div>
         </div>
       </main>
@@ -40,7 +41,11 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    submitForm: () => {
+      dispatch(submitRegistrationForm())
+    }
+  }
 }
 
 const Preview = connect(
