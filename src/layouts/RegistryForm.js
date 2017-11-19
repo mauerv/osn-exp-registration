@@ -54,8 +54,11 @@ class RegistryFormComponent extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h1>Registration Form</h1>
-              <SideBar items={texts.categories} onItemClick={this.setActiveCategory.bind(this)}/>
-              <FormList questions={texts.items[this.state.activeCategory].elements} onInputChange={this.setFormFieldState.bind(this)}/>
+              <SideBar items={texts.categories}
+                       onItemClick={this.setActiveCategory.bind(this)}
+                       activeCategory={this.state.activeCategory}/>
+              <FormList questions={texts.items[this.state.activeCategory].elements}
+                        onInputChange={this.setFormFieldState.bind(this)}/>
             {this.state.activeCategory === (texts.categories.length - 1) ?
               <Button text='Preview Submission' onButtonClick={this.handlePreviewClick.bind(this)}/> :
               <Button text='Next Page' onButtonClick={this.handleNextPage.bind(this)}/>}

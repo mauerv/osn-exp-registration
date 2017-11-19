@@ -105,6 +105,11 @@ code {
   height: 100%;
   text-align: center;
 }
+.sidebar li:hover {
+   cursor: pointer;
+   font-weight: bold;
+   color: blue;
+}
 .sidebar li:visited {
   color: red;
 }
@@ -118,7 +123,7 @@ code {
   padding: 0px 10px;
   border-radius: 5px;
   float: right;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 .form-list {
   width: 75%;
