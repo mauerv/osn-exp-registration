@@ -96,3 +96,12 @@ code {
   border-radius: 5px;
   height: 55px;
 }
+
+.registry {
+  text-align: center;
+}
+
+.registry ul {
+  list-style: none;
+  padding-left: none;
+}

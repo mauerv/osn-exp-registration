@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
 import getWeb3 from './actions/getWeb3'
+import { requestExperiments } from './actions/experimentsActions.js'
 
 // Layouts
 import App from './App'
 import Home from './layouts/Home'
+import Registry from './layouts/Registry'
+import RegistryForm from './layouts/RegistryForm'
 
 // Redux Store
 import store from './store'
@@ -20,6 +22,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 getWeb3
 .then(results => {
   console.log('Web3 initialized!')
+  store.dispatch(requestExperiments())
 })
 .catch(() => {
   console.log('Error in web3 initialization.')
@@ -30,6 +33,8 @@ ReactDOM.render((
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
+          <Route path="registry" component={Registry} />
+          <Route path="registry-form" component={RegistryForm} />
         </Route>
       </Router>
     </Provider>
