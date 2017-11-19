@@ -7,5 +7,5 @@ module.exports = function(deployer) {
   deployer.link(Ownable, Killable);
   deployer.deploy(Killable);
   deployer.link(Killable, ExperimentRegistry);
-  deployer.deploy(ExperimentRegistry, ['asdaq6K6pohQcTKYqnS1YhWrCiS4gz7Xi34sdwMe9USZ7u', 'QmasdqweqqnS1YhWrCiS4gz7Xi34sd123Z7a', 'Qmd286K6pohQcTKYqnS1YhWrCiS4gz7Xi34sdwMe9USZ7s']);
+  deployer.deploy(ExperimentRegistry);
 };

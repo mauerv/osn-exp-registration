@@ -88,9 +88,6 @@ code {
 .home .pure-button.pure-button-primary {
   margin: auto;
   display: block;
-  padding: 0 10px;
-  border-radius: 5px;
-  height: 55px;
 }
 .registry {
   text-align: center;
@@ -118,10 +115,12 @@ code {
   padding-left: 0;
 }
 /* Form List */
-.registry-form .pure-button.pure-button-primary {
+.pure-button.pure-button-primary {
   height: 55px;
   padding: 0px 10px;
   border-radius: 5px;
+}
+.registry-form .pure-button.pure-button-primary {
   float: right;
   margin-right: 5%;
 }
@@ -130,15 +129,25 @@ code {
   float: right;
   margin-right: 5%;
 }
-.form-group {
-
-}
 .form-caption {
   margin-bottom: 0px;
 }
 .form-description {
   margin: 5px auto 10px auto;
 }
-.form-input {
-
+/* Preview */
+.preview {
+  text-align: center;
+}
+.list-group {
+  background-color: #eee;
+  padding: 10px 0;
+  margin: 20px;
+}
+.list-text {
+  color: #555
+}
+.list-text-primary {
+  font-style: italic;
+  font-size: 105%;
 }
