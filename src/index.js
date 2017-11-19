@@ -11,6 +11,7 @@ import App from './App'
 import Home from './layouts/Home'
 import Registry from './layouts/Registry'
 import RegistryForm from './layouts/RegistryForm'
+import Preview from './layouts/Preview'
 
 // Redux Store
 import store from './store'
@@ -35,6 +36,7 @@ ReactDOM.render((
           <IndexRoute component={Home} />
           <Route path="registry" component={Registry} />
           <Route path="registry-form" component={RegistryForm} />
+          <Route path="preview" component={Preview} />
         </Route>
       </Router>
     </Provider>

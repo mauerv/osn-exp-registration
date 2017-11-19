@@ -75,20 +75,16 @@ code {
   text-align: center;
   margin: 5% 10% 3% 10%;
 }
-
 .title {
   margin: 5%;
 }
-
 .features-small {
   display: flex;
   justify-content: space-evenly;
 }
-
 .features-small h2 {
   text-align: center;
 }
-
 .home .pure-button.pure-button-primary {
   margin: auto;
   display: block;
@@ -96,12 +92,48 @@ code {
   border-radius: 5px;
   height: 55px;
 }
-
 .registry {
   text-align: center;
 }
-
-.registry ul {
+.registry ul, .registry-form ul {
   list-style: none;
-  padding-left: none;
+  padding-left: 0;
+}
+/* Sidebar */
+.sidebar {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+.sidebar li:visited {
+  color: red;
+}
+.sidebar-left {
+  float: left;
+  padding-left: 0;
+}
+/* Form List */
+.registry-form .pure-button.pure-button-primary {
+  height: 55px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 10%;
+}
+.form-list {
+  width: 75%;
+  float: right;
+  margin-right: 5%;
+}
+.form-group {
+
+}
+.form-caption {
+  margin-bottom: 0px;
+}
+.form-description {
+  margin: 5px auto 10px auto;
+}
+.form-input {
+
 }
