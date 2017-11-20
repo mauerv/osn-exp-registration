@@ -12,6 +12,7 @@ import Home from './layouts/Home'
 import Registry from './layouts/Registry'
 import RegistryForm from './layouts/RegistryForm'
 import Preview from './layouts/Preview'
+import SubmissionDetails from './layouts/SubmissionDetails'
 
 // Redux Store
 import store from './store'
@@ -32,11 +33,12 @@ getWeb3
 ReactDOM.render((
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/" component={App}>
+        <Route path='/' component={App}>
           <IndexRoute component={Home} />
-          <Route path="registry" component={Registry} />
-          <Route path="registry-form" component={RegistryForm} />
-          <Route path="preview" component={Preview} />
+          <Route path='registry' component={Registry} />
+          <Route path='registry-form' component={RegistryForm} />
+          <Route path='preview' component={Preview} />
+          <Route path='submission-details' component={SubmissionDetails} />
         </Route>
       </Router>
     </Provider>

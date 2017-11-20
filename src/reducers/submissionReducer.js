@@ -1,17 +1,17 @@
 const initialState = {
-  experimentList: []
+  hash: '',
+  tx: '',
+  file: ''
 }
 
 const experimentsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'REQUEST_EXPERIMENTS_SUCCESSFUL':
-      return Object.assign({}, state, {
-        experimentList: action.payload
-      })
     case 'SUCCESSFUL_REGISTRATION':
-      return {
-        experimentList: [...state.experimentList, action.hash]
-      }
+      return Object.assign({}, state, {
+        hash: action.hash,
+        tx: action.tx,
+        file: action.file
+      })
     default:
       return state
   }

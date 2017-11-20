@@ -10,10 +10,12 @@ function updateForm(formData) {
   }
 }
 
-function successfulRegistration(hash) {
+function successfulRegistration(hash, tx, file) {
   return {
     type: 'SUCCESSFUL_REGISTRATION',
-    payload: hash
+    hash: hash,
+    tx: tx,
+    file: file
   }
 }
 
@@ -41,9 +43,9 @@ export const submitRegistrationForm = () => {
         registry.deployed().then(function(instance) {
           registryInstance = instance
           registryInstance.registerExperiment(hash, {from: coinbase})
-          .then(function() {
-            dispatch(successfulRegistration(hash))
-            return browserHistory.push('/registry')
+          .then(function(result) {
+            dispatch(successfulRegistration(hash, result.tx, file))
+            return browserHistory.push('/submission-details')
           })
         })
       })
