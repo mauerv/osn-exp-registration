@@ -6,17 +6,18 @@ import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
 import './App.css'
+import './css/media-queries.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav className="navbar menu menu-horizontal">
-          <ul className="menu-list navbar-right">
-            <Link to="/registry" className="menu-heading menu-link">Registry</Link>
-            <Link to="/registry-form" className="menu-heading menu-link">New Registration</Link>
+        <nav className="navbar pure-menu pure-menu-horizontal">
+          <ul className="pure-menu-list navbar-right">
+            <Link to="/registry" className="pure-menu-heading pure-menu-link">Registry</Link>
+            <Link to="/registry-form" className="pure-menu-heading pure-menu-link">New Registration</Link>
           </ul>
-          <Link to="/" className="menu-heading menu-link">OSN</Link>
+          <Link to="/" className="pure-menu-heading pure-menu-link">OSN</Link>
         </nav>
 
         {this.props.children}

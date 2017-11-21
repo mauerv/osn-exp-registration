@@ -25,9 +25,6 @@ class RegistryFormComponent extends Component {
 
   setFormFieldState(e) {
     e.preventDefault()
-    console.log('Category:', e.target.dataset.category);
-    console.log('Field:', e.target.dataset.field);
-    console.log('Value:', e.target.value);
     this.setState({[e.target.dataset.category]: {...this.state[e.target.dataset.category], [e.target.dataset.field]: e.target.value }})
   }
 
@@ -53,16 +50,20 @@ class RegistryFormComponent extends Component {
 
     return (
       <main className="container registry-form">
-        <h1>Registration Form</h1>
-          <SideBar items={texts.categoryNames}
-                   onItemClick={this.setActiveCategory.bind(this)}
-                   activeCategory={this.state.activeCategory}/>
-          <FormList questions={texts.items[this.state.activeCategory].elements}
-                    formData={this.state}
-                    onInputChange={this.setFormFieldState.bind(this)}/>
-        {this.state.activeCategory === (texts.categoryNames.length - 1) ?
-          <Button text='Preview Submission' onButtonClick={this.handlePreviewClick.bind(this)}/> :
-          <Button text='Next Page' onButtonClick={this.handleNextPage.bind(this)}/>}
+        <div className="pure-g">
+          <div className="pure-u-1-1">
+            <h1 className='main-title'>Registration Form</h1>
+            <SideBar items={texts.categoryNames}
+                     onItemClick={this.setActiveCategory.bind(this)}
+                     activeCategory={this.state.activeCategory}/>
+            <FormList questions={texts.items[this.state.activeCategory].elements}
+                      formData={this.state}
+                      onInputChange={this.setFormFieldState.bind(this)}/>
+            {this.state.activeCategory === (texts.categoryNames.length - 1) ?
+            <Button text='Preview Submission' onButtonClick={this.handlePreviewClick.bind(this)}/> :
+            <Button text='Next Page' onButtonClick={this.handleNextPage.bind(this)}/>}
+          </div>
+        </div>
       </main>
     )
   }

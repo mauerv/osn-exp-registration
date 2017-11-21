@@ -17,6 +17,14 @@ ul {
   padding: 45px 20px;
 }
 
+.pure-button-primary {
+  background-color: #0c1a2b;
+}
+
+.pure-button-primary:hover {
+  background-color: #233e5e;
+}
+
 .pure-form input[type="text"]:focus {
   border-color: #0c1a2b;
 }
@@ -39,7 +47,7 @@ ul {
   background: #233e5e;
 }
 
-.navbar .menu-heading {
+.navbar .pure-menu-heading {
   font-weight: bold;
   text-transform: none;
 }
@@ -52,14 +60,10 @@ ul {
   height: 16px;
   margin-right: 10px;
 }
-
 /* Custom CSS */
 .jumbotron {
   text-align: center;
   margin: 5% 10% 3% 10%;
-}
-.title {
-  margin: 5%;
 }
 .features-small {
   display: flex;
@@ -79,6 +83,10 @@ ul {
   list-style: none;
   padding-left: 0;
 }
+/* Home */
+.home .main-title {
+  margin: 5%;
+}
 /* Sidebar */
 .sidebar {
   width: 20%;
@@ -97,6 +105,18 @@ ul {
   float: left;
   padding-left: 0;
 }
+.sidebar .sidebar-item {
+  background-color: rgb(10, 25, 44);
+  color: white !important;
+  border: white solid 1px;
+  margin: 0 5%;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+.sidebar-item:hover {
+  color: white;
+  background-color: #233e5e;
+}
 /* Form List */
 .pure-button.pure-button-primary {
   height: 55px;
@@ -108,15 +128,24 @@ ul {
   margin-right: 5%;
 }
 .form-list {
-  width: 75%;
+  width: 73%;
   float: right;
   margin-right: 5%;
+  margin-bottom: 20px;
 }
 .form-caption {
   margin-bottom: 0px;
 }
 .form-description {
   margin: 5px auto 10px auto;
+}
+.form-input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: rgb(80, 95, 107);
 }
 /* Preview */
 .preview {
@@ -135,12 +164,6 @@ ul {
   font-size: 105%;
 }
 /* Buttons */
-.pure-button-primary {
-  background-color: #0c1a2b;
-}
-.pure-button-primary:hover {
-  background-color: #233e5e;
-}
 .btn {
   text-decoration: none;
   padding: 10px;
@@ -156,10 +179,19 @@ ul {
   margin: auto;
   display: block;
 }
-.align-left {
-  float: left;
-}
 .btn-primary:hover {
   background-color: #233e5e
 }
-/* Navbar */
+/* Preview */
+.preview .main-title {
+  margin: 5%;
+}
+.preview a {
+  float: left;
+  margin-left: 4%;
+  padding: 15px 0;
+}
+.preview button {
+  float: right;
+  margin-right: 4%
+}

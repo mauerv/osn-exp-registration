@@ -9,24 +9,29 @@ class PreviewComponent extends Component {
   render() {
     return (
       <main className="container">
-        {texts.items.map(item => {
-          return (
-            <div key={item.category}>
-              <h1>{item.category}</h1>
-              {item.elements.map(element => {
-                return (
-                  <div className='list-group' key={element.title}>
-                    <h2>{element.title}</h2>
-                    <p className='list-text'>{element.description}</p>
-                    <p className='list-text-primary'>{this.props.formData[element.categoryField][element.formField]}</p>
-                  </div>
-                )
-              })}
-            </div>
-          )
-        })}
-        <Link to='/registry-form' className='btn btn-primary absolute-left'>Back to Form</Link>
-        <Button text="Register Experiment" onButtonClick={this.props.submitForm}/>
+        <div className="pure-g preview">
+          <div className="pure-u-1-1">
+            <h1 className='main-title'>Registration Preview</h1>
+            {texts.items.map(item => {
+              return (
+                <div key={item.category}>
+                  <h2>{item.category}</h2>
+                  {item.elements.map(element => {
+                    return (
+                      <div className='list-group' key={element.title}>
+                        <h3>{element.title}</h3>
+                        <p className='list-text'>{element.description}</p>
+                        <p className='list-text-primary'>{this.props.formData[element.categoryField][element.formField]}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              )
+            })}
+            <Link to='/registry-form' className='btn btn-primary absolute-left'>Back to Form</Link>
+            <Button text="Register Experiment" onButtonClick={this.props.submitForm}/>
+          </div>
+        </div>
       </main>
     )
   }
