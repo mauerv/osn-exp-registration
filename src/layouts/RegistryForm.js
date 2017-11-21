@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { updateReduxFormState } from '../actions/registryFormActions'
 
 import texts from '../util/formTexts'
-import formStateTree from '../util/formStateTree'
 
 import SideBar from '../components/SideBar'
 import FormList from '../components/FormList'
@@ -15,7 +14,7 @@ class RegistryFormComponent extends Component {
     super(props)
 
     this.state = {
-      ...formStateTree,
+      ...this.props.formData,
       activeCategory: 0
     }
   }
@@ -26,7 +25,10 @@ class RegistryFormComponent extends Component {
 
   setFormFieldState(e) {
     e.preventDefault()
-    this.setState({[e.target.dataset.field]: e.target.value})
+    console.log('Category:', e.target.dataset.category);
+    console.log('Field:', e.target.dataset.field);
+    console.log('Value:', e.target.value);
+    this.setState({[e.target.dataset.category]: {...this.state[e.target.dataset.category], [e.target.dataset.field]: e.target.value }})
   }
 
   handleNextPage(e) {
@@ -47,28 +49,29 @@ class RegistryFormComponent extends Component {
   }
 
   render() {
+    console.log('The title is:', this.props.formData.studyInformation.title);
+
     return (
       <main className="container registry-form">
-        <div className="pure-g">
-          <div className="pure-u-1-1">
-            <h1>Registration Form</h1>
-              <SideBar items={texts.categories}
-                       onItemClick={this.setActiveCategory.bind(this)}
-                       activeCategory={this.state.activeCategory}/>
-              <FormList questions={texts.items[this.state.activeCategory].elements}
-                        onInputChange={this.setFormFieldState.bind(this)}/>
-            {this.state.activeCategory === (texts.categories.length - 1) ?
-              <Button text='Preview Submission' onButtonClick={this.handlePreviewClick.bind(this)}/> :
-              <Button text='Next Page' onButtonClick={this.handleNextPage.bind(this)}/>}
-          </div>
-        </div>
+        <h1>Registration Form</h1>
+          <SideBar items={texts.categoryNames}
+                   onItemClick={this.setActiveCategory.bind(this)}
+                   activeCategory={this.state.activeCategory}/>
+          <FormList questions={texts.items[this.state.activeCategory].elements}
+                    formData={this.state}
+                    onInputChange={this.setFormFieldState.bind(this)}/>
+        {this.state.activeCategory === (texts.categoryNames.length - 1) ?
+          <Button text='Preview Submission' onButtonClick={this.handlePreviewClick.bind(this)}/> :
+          <Button text='Next Page' onButtonClick={this.handleNextPage.bind(this)}/>}
       </main>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    formData: state.formData
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
